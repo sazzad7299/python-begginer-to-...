@@ -1,15 +1,32 @@
-def is_prime(n):
-    if n < 2:
-        return False
-    for i in range(2,int(n ** 0.5) +1):
-        if n % i == 0:
-            return False
-    return True
-def count_primes(limit):
-    prime_numbers =[num for num in range(limit+1) if is_prime(num)]
-    return len(prime_numbers), prime_numbers
+# Initialize a dictionary with user details
+user_info = {
+    "name": "Alice",
+    "age": 28,
+    "city": "New York",
+    "skills": ["Python", "Django", "Machine Learning"]
+}
 
-num = int(input("Enter a Number"))
-prime_count, prime_list = count_primes(num)
-print(f"Total prime numbers from 0 to {num} : {prime_count}")
-print("prime Numbers:", prime_list)
+# Add a new key-value pair
+user_info["email"] = "alice@example.com"
+
+# Update an existing value
+user_info["age"] += 1  # Increment age
+
+# Append a new skill to the skills list
+user_info["skills"].append("Data Science")
+
+# Remove a key using del
+del user_info["city"]
+
+# Check if a key exists
+if "email" in user_info:
+    print("Email:", user_info["email"])
+
+# Iterating over dictionary keys and values
+print("\nUser Info:")
+for key, value in user_info.items():
+    print(f"{key}: {value}")
+
+# Using dictionary comprehension to transform data (Convert all keys to uppercase)
+upper_keys_dict = {key.upper(): value for key, value in user_info.items()}
+print("\nUppercase Keys Dictionary:", upper_keys_dict)
