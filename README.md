@@ -115,3 +115,20 @@ upper_keys_dict = {key.upper(): value for key, value in user_info.items()}
 print("\nUppercase Keys Dictionary:", upper_keys_dict)
 
 ```
+
+### 7. Exception Handling
+```python
+
+try:
+    a = int(input("Enter a Number divided for:\n"))
+    b = int(input("Enter a Number divided by:\n"))
+    print(a/b)
+except ValueError as e:
+    print("Given Input is wrong,",e)
+except ZeroDivisionError as e:
+    print(" Divided by 0 is not possible",e)
+except Exception as e:
+    print("Some went wrong:", e)
+finally:
+    print("Thank You!!!")
+```
